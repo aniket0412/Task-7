@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+</head>
+
+<script>
+  let timer = document.getElementById("addtimer");
+  let olddate = new Date();
+  timer.innerHTML = olddate;
+
+  let timeout = setInterval(() => {
+    let newdate = new Date();
+    timer.innerHTML = newdate;
+
+    if (newdate.getSeconds() - olddate.getSeconds() === 10) {
+      clearInterval(timeout);
+      alert("Time's up");
+    }
+  }, 1000);
+</script>
+
+<body>
+  <div id="parent">
+    <div id="timer">
+      <p>It's a timer of 10 seconds</p>
+      <span id="addtimer"></span>
+    </div>
+  </div>
+</body>
+
+</html>
